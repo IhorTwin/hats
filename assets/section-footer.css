@@ -1,4 +1,14 @@
+:root {
+  /* hats theme */
+  /* --dark-bg: #000;
+  --color-on-dark: #fff; */
+}
+
 .footer {
+  --color-foreground: white;
+  --color-background: black;
+  color: var(--color-foreground);
+  background: var(--color-background);
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
