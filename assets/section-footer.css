@@ -524,4 +524,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  .h--footer-content .footer__blocks-wrapper {
+    display: grid;
+    gap: 80px;
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+
+  .h--footer-content .footer__blocks-wrapper > div {
+    width: auto;
+  }
+
+  a[href*='instagram'] {
+    font-size: larger !important;
+  }
 }
