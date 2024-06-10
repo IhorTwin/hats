@@ -260,7 +260,8 @@
             {%- if customer and customer.has_avatar? -%}
               {{ customer | avatar }}
             {%- else -%}
-              {% render 'icon-account' %}
+              LOGIN
+              {% comment %} {% render 'icon-account' %} {% endcomment %}
             {%- endif -%}
           </account-icon>
           <span class="visually-hidden">

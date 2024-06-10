@@ -329,6 +329,14 @@
 }
 
 /* Login */
+@media (min-height: 990px) {
+  .login {
+    min-height: calc(100vh - 350px);  
+  }  
+}
+
+
+
 .login a {
   display: block;
   margin: 0 auto;
