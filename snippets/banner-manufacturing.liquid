@@ -1,0 +1,31 @@
+<style>
+    .hats--banner--manufacturing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        aspect-ratio: 16/9;
+        position: relative;
+    }
+
+    .hats--banner--manufacturing-img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+    }
+
+    .hats--banner--manufacturing-text {
+        max-width: 50ch;
+        color: var(--color-foreground);
+    }
+</style>
+
+<div class="hats--banner--manufacturing">
+    <!-- <img class="hats--banner--manufacturing-img" src="{% 'manufacturing.jpg' | asset_url %}"> -->
+    <div class="hats--banner--manufacturing-text">
+        <h2>Individual approach</h2>
+        <p>Do you have your own design idea and want to realize it? Describe your wishes to us and our manager will
+            contact you to clarify the details. You can also write us an email or call us.</p>
+            <a href="">To order</a>
+    </div>
+</div>
