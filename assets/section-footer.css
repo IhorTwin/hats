@@ -518,3 +518,10 @@
     }
   }
 }
+
+@media (min-width: 990px) {
+  .h--footer-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
