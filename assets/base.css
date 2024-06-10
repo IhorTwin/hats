@@ -352,7 +352,6 @@ h6,
 
 p, .rte, .rte p {
   color: var(--color-foreground);
-  font-size: 18px;
   line-height: 1.2;
   max-width: 50ch;
   margin-inline: auto;
@@ -3517,5 +3516,6 @@ details-disclosure > details {
   .h--main-page .rte {
     max-width: 64ch;
     text-align: left;
+    font-size: 18px;
   }
 }
