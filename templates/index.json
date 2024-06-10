@@ -39,11 +39,11 @@
     "rich_text": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
+        "heading_mFfnXM": {
           "type": "heading",
           "settings": {
-            "heading": "SEASONAL SELECTS",
-            "heading_size": "h2"
+            "heading": "Seasonal Selects",
+            "heading_size": "h1"
           }
         },
         "text": {
@@ -54,7 +54,7 @@
         }
       },
       "block_order": [
-        "heading",
+        "heading_mFfnXM",
         "text"
       ],
       "settings": {
@@ -154,7 +154,7 @@
           "type": "button",
           "settings": {
             "button_label": "READ MORE",
-            "button_link": "",
+            "button_link": "shopify:\/\/pages\/about-us",
             "button_style_secondary": true
           }
         }
@@ -201,7 +201,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "TO ORDER",
-            "button_link_1": "",
+            "button_link_1": "shopify:\/\/pages\/about-us",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
