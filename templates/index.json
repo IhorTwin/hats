@@ -42,14 +42,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "heading": "SEASONAL SELECTS",
+            "heading_size": "h2"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Whether you're braving the sun or bundling up against the chill, our curated collection of hats combines style and functionality, ensuring you're ready for whatever the weather throws your way.<\/p>"
           }
         }
       },
@@ -62,20 +62,20 @@
         "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "padding_top": 100,
+        "padding_bottom": 68
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": false,
@@ -92,6 +92,140 @@
         "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
+      }
+    },
+    "image_banner_NGJyiH": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_AYDzpC": {
+          "type": "heading",
+          "settings": {
+            "heading": "MANUFACTURING",
+            "heading_size": "h1"
+          }
+        },
+        "text_mbWdwQ": {
+          "type": "text",
+          "settings": {
+            "text": "Single piece creation designed with the master’s warm touch",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AYDzpC",
+        "text_mbWdwQ"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/manufacturing.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_with_text_a9GwR6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_QFTCa9": {
+          "type": "heading",
+          "settings": {
+            "heading": "ABOUT THE BRAND",
+            "heading_size": "h1"
+          }
+        },
+        "text_mbCzFL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Valeria Galygina spent most of her life in Europe, absorbing the cultural characteristics of Latvia and Switzerland. Her passion for making hats came from observing people's gradual loss of their uniqueness.<br\/>It was important for her to create something through which everyone could express self-confidence, and emphasize their individuality and status.<br\/>The hats she creates are not for everyone - that's an important statement that they are for those who share her vision. Lera herself is a shining example of how you can integrate hats into any look in everyday life\u2028and be confident about it...<br\/><\/p>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_CEQAfM": {
+          "type": "button",
+          "settings": {
+            "button_label": "READ MORE",
+            "button_link": "",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_QFTCa9",
+        "text_mbCzFL",
+        "button_CEQAfM"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_3796_1.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_4mfw9C": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_VF68bW": {
+          "type": "heading",
+          "settings": {
+            "heading": "INDIVIDUAL APPROACH",
+            "heading_size": "h1"
+          }
+        },
+        "text_6ENUNB": {
+          "type": "text",
+          "settings": {
+            "text": "Do you have your own design idea and want to realize it? Describe your wishes to us and our manager will contact you to clarify the details. You can also write us an email\u2028or call us",
+            "text_style": "body"
+          }
+        },
+        "buttons_YgyyEz": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "TO ORDER",
+            "button_link_1": "",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_VF68bW",
+        "text_6ENUNB",
+        "buttons_YgyyEz"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Banner_order.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "collage": {
@@ -122,6 +256,7 @@
         "product",
         "collection-1"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Multimedia collage",
         "heading_size": "h2",
@@ -135,6 +270,7 @@
     },
     "video": {
       "type": "video",
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h1",
@@ -183,6 +319,7 @@
         "column2",
         "column3"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -199,14 +336,202 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "slideshow_6DYQT4": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_JDbhVF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Photo_-_3.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_ALccBw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Photo.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_PcjUCT": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Photo_-_2.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_JDbhVF",
+        "slide_ALccBw",
+        "slide_PcjUCT"
+      ],
+      "settings": {
+        "layout": "grid",
+        "slide_height": "large",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_kj3D3j": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_F6hVJw": {
+          "type": "heading",
+          "settings": {
+            "heading": "MODELS IN THE SLIDESHOW",
+            "heading_size": "h1"
+          }
+        },
+        "text_wHHxqP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Take a look at the models provided in the slideshow.<\/p>"
+          }
+        },
+        "button_Jzjxb6": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_F6hVJw",
+        "text_wHHxqP",
+        "button_Jzjxb6"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_Dkg7af": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "leather-straw",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter_XFpJhg": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_bYRFrz": {
+          "type": "heading",
+          "settings": {
+            "heading": "STAY WITH US",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_9qeJAq": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>We take care of our subscribers - we fly into their inboxes with new drops, discounts, and special offers.<\/p>"
+          }
+        },
+        "email_form_kWDFcm": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_bYRFrz",
+        "paragraph_9qeJAq",
+        "email_form_kWDFcm"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
     "image_banner",
     "rich_text",
     "featured_collection",
+    "image_banner_NGJyiH",
+    "image_with_text_a9GwR6",
+    "image_banner_4mfw9C",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "slideshow_6DYQT4",
+    "rich_text_kj3D3j",
+    "featured_collection_Dkg7af",
+    "newsletter_XFpJhg"
   ]
 }
