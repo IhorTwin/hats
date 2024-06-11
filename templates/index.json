@@ -39,11 +39,11 @@
     "rich_text": {
       "type": "rich-text",
       "blocks": {
-        "heading_mFfnXM": {
+        "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Seasonal Selects",
-            "heading_size": "h1"
+            "heading": "SEASONAL SELECTS",
+            "heading_size": "h2"
           }
         },
         "text": {
@@ -54,7 +54,7 @@
         }
       },
       "block_order": [
-        "heading_mFfnXM",
+        "heading",
         "text"
       ],
       "settings": {
@@ -146,7 +146,7 @@
         "text_mbCzFL": {
           "type": "text",
           "settings": {
-            "text": "<p>Valeria Galygina spent most of her life in Europe, absorbing the cultural characteristics of Latvia and Switzerland. Her passion for making hats came from observing people's gradual loss of their uniqueness.<\/p><p>It was important for her to create something through which everyone could express self-confidence, and emphasize their individuality and status.<\/p><p>The hats she creates are not for everyone - that's an important statement that they are for those who share her vision. Lera herself is a shining example of how you can integrate hats into any look in everyday life\u2028and be confident about it...<br\/><\/p>",
+            "text": "<p>Valeria Galygina spent most of her life in Europe, absorbing the cultural characteristics of Latvia and Switzerland. Her passion for making hats came from observing people's gradual loss of their uniqueness.<\/p><p><br\/>It was important for her to create something through which everyone could express self-confidence, and emphasize their individuality and status.<\/p><p><br\/>The hats she creates are not for everyone - that's an important statement that they are for those who share her vision. Lera herself is a shining example of how you can integrate hats into any look in everyday life\u2028and be confident about it...<br\/><\/p>",
             "text_style": "subtitle"
           }
         },
@@ -154,7 +154,7 @@
           "type": "button",
           "settings": {
             "button_label": "READ MORE",
-            "button_link": "shopify:\/\/pages\/about-us",
+            "button_link": "",
             "button_style_secondary": true
           }
         }
@@ -163,9 +163,6 @@
         "heading_QFTCa9",
         "text_mbCzFL",
         "button_CEQAfM"
-      ],
-      "custom_css": [
-        ".image-with-text__content--middle {padding-right: 0; }"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_3796_1.png",
@@ -180,7 +177,7 @@
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
-        "padding_bottom": 20
+        "padding_bottom": 36
       }
     },
     "image_banner_4mfw9C": {
@@ -204,7 +201,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "TO ORDER",
-            "button_link_1": "shopify:\/\/pages\/about-us",
+            "button_link_1": "",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
