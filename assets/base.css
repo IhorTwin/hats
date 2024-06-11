@@ -3520,4 +3520,17 @@ details-disclosure > details {
     text-align: left;
     font-size: 18px;
   }
+
+  .subtitle {
+    margin: 0;
+  }
+
+  .image-with-text__media--small {
+    height: 42rem;
+  }
+
+  h2.image-with-text__heading {
+    width: 500px;
+    margin-inline: auto;
+  }
 }
