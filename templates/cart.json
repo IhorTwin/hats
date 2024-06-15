@@ -3,12 +3,12 @@
     "cart-items": {
       "type": "main-cart-items",
       "custom_css": [
-        "button {text-transform: uppercase;}"
+        ".button {text-transform: uppercase;}"
       ],
       "settings": {
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 76
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "cart-footer": {
@@ -48,7 +48,7 @@
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "link",
         "enable_desktop_slider": false,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -60,7 +60,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 60,
-        "padding_bottom": 36
+        "padding_bottom": 100
       }
     }
   },
