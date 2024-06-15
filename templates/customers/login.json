@@ -2,6 +2,9 @@
   "sections": {
     "main": {
       "type": "main-login",
+      "custom_css": [
+        ".customer button {text-transform: uppercase; min-height: 40px; line-height: 1; width: 100%; display: block !important;}"
+      ],
       "settings": {
         "enable_shop_login_button": true,
         "padding_top": 44,
