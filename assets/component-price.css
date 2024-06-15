@@ -27,8 +27,10 @@
   margin-right: 0;
 }
 
-.product--large .price__regular .price-item--regular {
-  font-size: 50px;
+@media (min-width:990px) {
+  .product--large .price__regular .price-item--regular {
+    font-size: 50px;
+  }
 }
 
 .product-form__buttons .product-form__submit {
