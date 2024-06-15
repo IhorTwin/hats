@@ -26,6 +26,7 @@
   <h1>
     {{ 'customer.register.title' | t }}
   </h1>
+  <p>Create an account by filling in the information below to access your order information.</p>
   {%- form 'create_customer', novalidate: 'novalidate' -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
@@ -139,6 +140,8 @@
       {{ 'customer.register.submit' | t }}
     </button>
   {%- endform -%}
+
+  <p style="padding-top: 2rem;">Already have an account? <a href="/login">Sign in</a></p>
 </div>
 
 {% schema %}

@@ -1224,6 +1224,11 @@ button.shopify-payment-button__button--unbranded {
   background-color: rgba(var(--color-button), var(--alpha-button-background));
 }
 
+.customer button {
+  display: flex;
+  width: 100%;
+}
+
 .button:before,
 .shopify-challenge__button:before,
 .customer button:before,
@@ -3505,7 +3510,8 @@ details-disclosure > details {
     display: none !important;
   }
 
-  .h--main-page {
+  .h--main-page,
+  .h--content-for-layout {
     min-height: calc(100vh - 350px);
   }
 

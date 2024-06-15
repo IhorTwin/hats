@@ -18,6 +18,14 @@
   {%- assign hide_shop_login_button = true -%}
 {%- endif -%}
 
+<style>
+  .h--cta-helper {
+    color: black;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+  }
+</style>
+
 <div class="customer login section-{{ section.id }}-padding">
   <h1 id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
@@ -156,6 +164,8 @@
       <button>
         {{ 'customer.login_page.sign_in' | t }}
       </button>
+
+      <p class="h--cta-helper">Don’t have an account?</p>
 
       <a href="{{ routes.account_register_url }}">
         {{ 'customer.login_page.create_account' | t }}
