@@ -2,6 +2,9 @@
   "sections": {
     "cart-items": {
       "type": "main-cart-items",
+      "custom_css": [
+        "button {text-transform: uppercase;}"
+      ],
       "settings": {
         "color_scheme": "",
         "padding_top": 36,
@@ -35,7 +38,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured collection",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
