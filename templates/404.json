@@ -15,18 +15,10 @@
             "heading": "404",
             "heading_size": "h1"
           }
-        },
-        "heading_VdAcmz": {
-          "type": "heading",
-          "settings": {
-            "heading": "Try using our main menus or contact our support team.",
-            "heading_size": "h1"
-          }
         }
       },
       "block_order": [
-        "heading_kkCCLy",
-        "heading_VdAcmz"
+        "heading_kkCCLy"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -34,6 +26,29 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_hF89Ki": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4H98Bf": {
+          "type": "heading",
+          "settings": {
+            "heading": "TRY USING OUR MAIN MENUS OR CONTACT OUR SUPPORT TEAM.",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4H98Bf"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
         "padding_bottom": 100
       }
     },
@@ -63,7 +78,7 @@
         "content_alignment": "center",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 60,
+        "padding_top": 100,
         "padding_bottom": 0
       }
     },
@@ -99,6 +114,7 @@
   "order": [
     "main",
     "rich_text_zkeCmW",
+    "rich_text_hF89Ki",
     "rich_text_ULjdnx",
     "featured_collection_Q6dj64"
   ]
