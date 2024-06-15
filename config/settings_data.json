@@ -386,7 +386,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".customer button {text-transform: uppercase; min-height: 40px; line-height: 1;}"
+      ".customer button {text-transform: uppercase; min-height: 40px; line-height: 1; width: 100%; display: block;}"
     ]
   }
 }
