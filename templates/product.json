@@ -29,20 +29,6 @@
             "text_style": "body"
           }
         },
-        "text_gQfPtP": {
-          "type": "text",
-          "settings": {
-            "text": "SELECT SIZE:",
-            "text_style": "body"
-          }
-        },
-        "text_rEjRpd": {
-          "type": "text",
-          "settings": {
-            "text": "<strong>S<\/strong>",
-            "text_style": "body"
-          }
-        },
         "text_FeekLg": {
           "type": "text",
           "settings": {
@@ -119,8 +105,6 @@
         "caption",
         "price",
         "text_CPWiCF",
-        "text_gQfPtP",
-        "text_rEjRpd",
         "text_FeekLg",
         "variant_picker",
         "quantity_selector",
