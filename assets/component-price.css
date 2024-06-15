@@ -27,6 +27,14 @@
   margin-right: 0;
 }
 
+.product--large .price__regular .price-item--regular {
+  font-size: 50px;
+}
+
+.product-form__buttons .product-form__submit {
+  text-transform: uppercase;
+}
+
 .price:not(.price--show-badge) .price-item--last:last-of-type {
   margin: 0;
 }
