@@ -109,6 +109,40 @@
         "padding_top": 0,
         "padding_bottom": 100
       }
+    },
+    "newsletter_8bkGNa": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_VTHR4b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay with us!",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_UF9K4k": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>We take care of our subscribers - we fly into their inboxes with new drops, discounts, and special offers.<\/p>"
+          }
+        },
+        "email_form_Cwy3Ad": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_VTHR4b",
+        "paragraph_UF9K4k",
+        "email_form_Cwy3Ad"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -116,6 +150,7 @@
     "rich_text_zkeCmW",
     "rich_text_hF89Ki",
     "rich_text_ULjdnx",
-    "featured_collection_Q6dj64"
+    "featured_collection_Q6dj64",
+    "newsletter_8bkGNa"
   ]
 }
