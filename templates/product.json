@@ -61,7 +61,7 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
+            "heading": "about materials",
             "icon": "none",
             "content": "<p>Wolf leather<\/p>",
             "page": ""
