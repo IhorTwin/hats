@@ -21,6 +21,35 @@
 
   .h--customer-tabs {
     text-transform: uppercase;
+    list-style: none;
+    display: grid;
+  }
+
+  .h--customer-tabs li details {
+    font-size: 16px;
+    text-transform: none;
+
+    display: grid;
+    grid-template-columns: 365px 1fr;
+    gap: 217px;
+  }
+
+  .h--customer-tabs li a,
+  .h--customer-tabs li summary {
+    text-align: center;
+    padding-block: 32px;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .h--customer-tabs li a:hover {
+    text-decoration: none;
+    color: #838383; 
+  }
+  
+  .h--customer-tabs li:not(:last-child) {
+    border-bottom: 1px solid black;
   }
 </style>
 
