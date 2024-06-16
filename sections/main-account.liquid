@@ -39,7 +39,7 @@
     gap: var(--h-tab-gap);
   }
 
-  .h--customer-tabs li a,
+  .h--customer-tabs li > a,
   .h--customer-tabs li summary {
     width: var(--h-tab-width);
     text-align: center;
@@ -79,6 +79,13 @@
     padding-block: 1rem;
     display: flex;
     align-items: center;
+  }
+
+  .h--details-content a[href*="tel"],
+  .h--details-content a[href*="mailto"] {
+    font-size: 22px;
+    padding: 16px 0;
+    text-align: left;
   }
 </style>
 
