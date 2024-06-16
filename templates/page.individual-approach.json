@@ -1,14 +1,74 @@
 {
   "sections": {
+    "image_with_text_P9zPrA": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ybnj7J": {
+          "type": "heading",
+          "settings": {
+            "heading": "your\u2028individual wishes",
+            "heading_size": "h1"
+          }
+        },
+        "text_JGAAnf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If your favorite model is not available in the size you need, please indicate its number and the size you need in the message, and our manager will contact you. Once the order is confirmed, it will take 10 days to produce your unique hat and it will be on its way to the customer.\u2028\u2028Do you have your own design idea and want to realize it? Describe your wishes to us and our manager will contact you to clarify the details. You can also write us an email or call us.<\/p>",
+            "text_style": "subtitle"
+          }
+        },
+        "button_c7kF8P": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ybnj7J",
+        "text_JGAAnf",
+        "button_c7kF8P"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hat_00645d28-8ac2-4ffe-aaa7-e07f4c33f3bd.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "contact_form_rN9LQr": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "image_with_text_P9zPrA",
+    "main",
+    "contact_form_rN9LQr"
   ]
 }
