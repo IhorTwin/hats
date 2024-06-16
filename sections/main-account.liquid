@@ -48,6 +48,10 @@
     outline: none;
   }
 
+  .h--customer-tabs li a {
+    display: block;
+  }
+
   .h--customer-tabs li a:hover {
     text-decoration: none;
     color: #838383;
@@ -77,7 +81,7 @@
   <h1 class="customer__title h--customer__title">{{ 'customer.account.title' | t }}</h1>
   <ul class="h--customer-tabs">
     <li>
-      <details open>
+      <details name="tab" open>
         <summary>MY ORDERS</summary>
         <div class="h--details-content">
           {% paginate customer.orders by 20 %}
@@ -196,7 +200,7 @@
       </details>
     </li>
     <li>
-      <details>
+      <details name="tab">
         <summary>ADRESS BOOK</summary>
 
         <div class="h--details-content">
@@ -216,7 +220,7 @@
       </li>
     {% endcomment %}
     <li>
-      <details>
+      <details name="tab">
         <summary>CONTACT US</summary>
 
         <div class="h--details-content">
