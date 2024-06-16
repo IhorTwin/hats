@@ -15,6 +15,11 @@
 {%- endstyle -%}
 
 <style>
+  .customer {
+    --tab-width: 365px;
+    --tab-gap: 217px;
+  }
+
   .h--customer__title {
     text-align: center;
   }
@@ -24,17 +29,18 @@
     list-style: none;
     display: grid;
     position: relative;
+    margin-top: 64px !important;
   }
 
   .h--customer-tabs li details {
     font-size: 16px;
     text-transform: none;
-    gap: 217px;
+    gap: var(--tab-gap);
   }
 
   .h--customer-tabs li a,
   .h--customer-tabs li summary {
-    width: 365px;
+    width: var(--tab-width);
     text-align: center;
     padding-block: 32px;
     text-transform: uppercase;
@@ -58,9 +64,12 @@
     position: absolute;
     width: 50vw;
     max-width: 800px;
-    left: calc(100% + 217px);
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
+    top: 0;
+    left: calc(var(--tab-width) + var(--tab-gap););
+    padding-block: 1rem;
+    display: flex;
+    align-items: center;
   }
 </style>
 
