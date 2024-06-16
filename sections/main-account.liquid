@@ -18,6 +18,7 @@
   :root {
     --h-tab-width: 365px;
     --h-tab-gap: 217px;
+    --h-active-tab-color: #838383;
   }
 
   .h--customer__title {
@@ -48,13 +49,17 @@
     outline: none;
   }
 
+  .h--customer-tabs li details[open] summary {
+    color: var(--h-active-tab-color);
+  }
+
   .h--customer-tabs li a {
     display: block;
   }
 
   .h--customer-tabs li a:hover {
     text-decoration: none;
-    color: #838383;
+    color: var(--h-active-tab-color);
   }
 
   .h--customer-tabs li {
@@ -84,118 +89,123 @@
       <details name="tab" open>
         <summary>MY ORDERS</summary>
         <div class="h--details-content">
-          {% paginate customer.orders by 20 %}
-            {%- if customer.orders.size > 0 -%}
-              <table role="table" class="order-history">
-                <caption class="visually-hidden">
-                  {{ 'customer.orders.title' | t }}
-                </caption>
-                <thead role="rowgroup">
-                  <tr role="row">
-                    <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
-                    <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
-                    <th id="ColumnPayment" scope="col" role="columnheader">
-                      {{ 'customer.orders.payment_status' | t }}
-                    </th>
-                    <th id="ColumnFulfillment" scope="col" role="columnheader">
-                      {{ 'customer.orders.fulfillment_status' | t }}
-                    </th>
-                    <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
-                  </tr>
-                </thead>
-                <tbody role="rowgroup">
-                  {%- for order in customer.orders -%}
+          <section>
+            {% paginate customer.orders by 20 %}
+              {%- if customer.orders.size > 0 -%}
+                <table role="table" class="order-history">
+                  <caption class="visually-hidden">
+                    {{ 'customer.orders.title' | t }}
+                  </caption>
+                  <thead role="rowgroup">
                     <tr role="row">
-                      <td
-                        id="RowOrder"
-                        role="cell"
-                        headers="ColumnOrder"
-                        data-label="{{ 'customer.orders.order_number' | t }}"
-                      >
-                        <a
-                          href="{{ order.customer_url }}"
-                          aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
-                        >
-                          {{ order.name }}
-                        </a>
-                      </td>
-                      <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
-                        {{ order.created_at | time_tag: format: 'date' }}
-                      </td>
-                      <td
-                        headers="RowOrder ColumnPayment"
-                        role="cell"
-                        data-label="{{ 'customer.orders.payment_status' | t }}"
-                      >
-                        {{ order.financial_status_label }}
-                      </td>
-                      <td
-                        headers="RowOrder ColumnFulfillment"
-                        role="cell"
-                        data-label="{{ 'customer.orders.fulfillment_status' | t }}"
-                      >
-                        {{ order.fulfillment_status_label }}
-                      </td>
-                      <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-                        {{ order.total_net_amount | money_with_currency }}
-                      </td>
+                      <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+                      <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+                      <th id="ColumnPayment" scope="col" role="columnheader">
+                        {{ 'customer.orders.payment_status' | t }}
+                      </th>
+                      <th id="ColumnFulfillment" scope="col" role="columnheader">
+                        {{ 'customer.orders.fulfillment_status' | t }}
+                      </th>
+                      <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
                     </tr>
-                  {%- endfor -%}
-                </tbody>
-              </table>
-            {%- else -%}
-              <div>{{ 'customer.orders.none' | t }}</div>
-            {%- endif -%}
-
-            {%- if paginate.pages > 1 -%}
-              {%- if paginate.parts.size > 0 -%}
-                <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-                  <ul role="list">
-                    {%- if paginate.previous -%}
-                      <li>
-                        <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
-                          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
-                          </svg>
-                        </a>
-                      </li>
-                    {%- endif -%}
-
-                    {%- for part in paginate.parts -%}
-                      <li>
-                        {%- if part.is_link -%}
-                          <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                            {{- part.title -}}
+                  </thead>
+                  <tbody role="rowgroup">
+                    {%- for order in customer.orders -%}
+                      <tr role="row">
+                        <td
+                          id="RowOrder"
+                          role="cell"
+                          headers="ColumnOrder"
+                          data-label="{{ 'customer.orders.order_number' | t }}"
+                        >
+                          <a
+                            href="{{ order.customer_url }}"
+                            aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                          >
+                            {{ order.name }}
                           </a>
-                        {%- else -%}
-                          {%- if part.title == paginate.current_page -%}
-                            <span
-                              aria-current="page"
+                        </td>
+                        <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                          {{ order.created_at | time_tag: format: 'date' }}
+                        </td>
+                        <td
+                          headers="RowOrder ColumnPayment"
+                          role="cell"
+                          data-label="{{ 'customer.orders.payment_status' | t }}"
+                        >
+                          {{ order.financial_status_label }}
+                        </td>
+                        <td
+                          headers="RowOrder ColumnFulfillment"
+                          role="cell"
+                          data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+                        >
+                          {{ order.fulfillment_status_label }}
+                        </td>
+                        <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                          {{ order.total_net_amount | money_with_currency }}
+                        </td>
+                      </tr>
+                    {%- endfor -%}
+                  </tbody>
+                </table>
+              {%- else -%}
+                <div>{{ 'customer.orders.none' | t }}</div>
+              {%- endif -%}
+
+              {%- if paginate.pages > 1 -%}
+                {%- if paginate.parts.size > 0 -%}
+                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                    <ul role="list">
+                      {%- if paginate.previous -%}
+                        <li>
+                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                            <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                            </svg>
+                          </a>
+                        </li>
+                      {%- endif -%}
+
+                      {%- for part in paginate.parts -%}
+                        <li>
+                          {%- if part.is_link -%}
+                            <a
+                              href="{{ part.url }}"
                               aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
                             >
                               {{- part.title -}}
-                            </span>
+                            </a>
                           {%- else -%}
-                            <span>{{ part.title }}</span>
+                            {%- if part.title == paginate.current_page -%}
+                              <span
+                                aria-current="page"
+                                aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                              >
+                                {{- part.title -}}
+                              </span>
+                            {%- else -%}
+                              <span>{{ part.title }}</span>
+                            {%- endif -%}
                           {%- endif -%}
-                        {%- endif -%}
-                      </li>
-                    {%- endfor -%}
+                        </li>
+                      {%- endfor -%}
 
-                    {%- if paginate.next -%}
-                      <li>
-                        <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
-                          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
-                          </svg>
-                        </a>
-                      </li>
-                    {%- endif -%}
-                  </ul>
-                </nav>
+                      {%- if paginate.next -%}
+                        <li>
+                          <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                            <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                            </svg>
+                          </a>
+                        </li>
+                      {%- endif -%}
+                    </ul>
+                  </nav>
+                {%- endif -%}
               {%- endif -%}
-            {%- endif -%}
-          {% endpaginate %}
+            {% endpaginate %}
+          </section>
         </div>
       </details>
     </li>
@@ -204,11 +214,13 @@
         <summary>ADRESS BOOK</summary>
 
         <div class="h--details-content">
-          {{ customer.default_address | format_address }}
+          <section>
+            {{ customer.default_address | format_address }}
 
-          <a target="_blank" href="{{ routes.account_addresses_url }}">
-            {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
-          </a>
+            <a target="_blank" href="{{ routes.account_addresses_url }}">
+              {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+            </a>
+          </section>
         </div>
       </details>
     </li>
@@ -224,24 +236,26 @@
         <summary>CONTACT US</summary>
 
         <div class="h--details-content">
-          <p>
-            If you have any queries please do not hesitate to contact us in whichever way works best for you. We're here
-            to help and answer any questions you may have. We have an FAQs section and the answer might be there
-            already. If not, please fill in the form below and we will be in touch.
-          </p>
-          <p>
-            If you wish to book an in-person appointment, add your details and your preferred date and contact method to
-            the message form, and one of our team will be in touch.
-          </p>
+          <section>
+            <p>
+              If you have any queries please do not hesitate to contact us in whichever way works best for you. We're
+              here to help and answer any questions you may have. We have an FAQs section and the answer might be there
+              already. If not, please fill in the form below and we will be in touch.
+            </p>
+            <p>
+              If you wish to book an in-person appointment, add your details and your preferred date and contact method
+              to the message form, and one of our team will be in touch.
+            </p>
 
-          <p>
-            Call Us<br>
-            <a href="tel:+44 20 7930 8874">+44 20 7930 8874</a>
-          </p>
-          <p>
-            Write Us<br>
-            <a href="mailto:support@glyginahats.com">support@glyginahats.com</a>
-          </p>
+            <p>
+              Call Us<br>
+              <a href="tel:+44 20 7930 8874">+44 20 7930 8874</a>
+            </p>
+            <p>
+              Write Us<br>
+              <a href="mailto:support@glyginahats.com">support@glyginahats.com</a>
+            </p>
+          </section>
         </div>
       </details>
     </li>
