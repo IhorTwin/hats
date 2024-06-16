@@ -76,6 +76,26 @@
       padding-top: 0.5rem;
     }
   }
+
+  @media (min-width: 990px) {
+    .header {
+      --header-menu-gap: 9rem;
+    }
+
+    .h--header__icon--cart {
+      display: contents !important;
+    }
+
+    .h--header__icon--account {
+      margin-right: var(--header-menu-gap);
+    }
+
+    .list-menu--inline {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      gap: var(--header-menu-gap);
+    }
+  }
 </style>
 
 {%- style -%}
@@ -255,15 +275,12 @@
       {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-          <account-icon>
-            {%- if customer and customer.has_avatar? -%}
-              {{ customer | avatar }}
-            {%- else -%}
-              LOGIN
-              {% comment %} {% render 'icon-account' %} {% endcomment %}
-            {%- endif -%}
-          </account-icon>
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="h--header__icon--account header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+          {%- if customer %}
+            MY ACCOUNT
+          {%- else -%}
+            LOGIN
+          {%- endif -%}
           <span class="visually-hidden">
             {%- liquid
               if customer
@@ -283,7 +300,8 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      <a style="margin-left: 2rem;" href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      <a href="{{ routes.cart_url }}" class="h--header__icon--cart header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        <span style="margin-right: 0.5rem; vertical-align: middle;">CART</span>
         {%- liquid
           if cart == empty
             render 'icon-cart-empty'
