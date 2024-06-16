@@ -25,6 +25,12 @@
     text-align: center;
   }
 
+  @media (min-width: 990px) {
+    .h--customer__title {
+      font-size: 50px;
+    }
+  }
+
   .h--customer-tabs {
     text-transform: uppercase;
     list-style: none;
@@ -81,23 +87,21 @@
     align-items: center;
   }
 
-  .h--details-content a[href*='tel'],
-  .h--details-content a[href*='mailto'] {
+  .h--details-content a[href*="tel"],
+  .h--details-content a[href*="mailto"] {
     font-size: 22px;
     padding: 16px 0;
     text-align: left;
     text-decoration: none;
   }
 
-  .h--details-content a[href*='tel'] {
+  .h--details-content a[href*="tel"] {
     margin-bottom: 2rem;
   }
 </style>
 
 <div class="customer account section-{{ section.id }}-padding">
-  <div class="h--main-page">
-    <h1>{{ 'customer.account.title' | t }}</h1>
-  </div>
+  <h1 class="customer__title h--customer__title">{{ 'customer.account.title' | t }}</h1>
   <ul class="h--customer-tabs">
     <li>
       <details name="tab" open>
