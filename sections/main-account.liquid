@@ -23,19 +23,18 @@
     text-transform: uppercase;
     list-style: none;
     display: grid;
+    position: relative;
   }
 
   .h--customer-tabs li details {
     font-size: 16px;
     text-transform: none;
-
-    display: grid;
-    grid-template-columns: 365px 1fr;
     gap: 217px;
   }
 
   .h--customer-tabs li a,
   .h--customer-tabs li summary {
+    width: 365px;
     text-align: center;
     padding-block: 32px;
     text-transform: uppercase;
@@ -45,11 +44,23 @@
 
   .h--customer-tabs li a:hover {
     text-decoration: none;
-    color: #838383; 
+    color: #838383;
   }
-  
+
+  .h--customer-tabs li {
+    width: 365px;
+  }
   .h--customer-tabs li:not(:last-child) {
     border-bottom: 1px solid black;
+  }
+
+  .h--details-content {
+    position: absolute;
+    width: 50vw;
+    max-width: 800px;
+    left: calc(100% + 217px);
+    top: 50%;
+    transform: translateY(-50%);
   }
 </style>
 
@@ -57,130 +68,135 @@
   <h1 class="customer__title h--customer__title">{{ 'customer.account.title' | t }}</h1>
   <ul class="h--customer-tabs">
     <li>
-      <details>
+      <details open>
         <summary>MY ORDERS</summary>
-
-        {% paginate customer.orders by 20 %}
-          {%- if customer.orders.size > 0 -%}
-            <table role="table" class="order-history">
-              <caption class="visually-hidden">
-                {{ 'customer.orders.title' | t }}
-              </caption>
-              <thead role="rowgroup">
-                <tr role="row">
-                  <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
-                  <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
-                  <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
-                  <th id="ColumnFulfillment" scope="col" role="columnheader">
-                    {{ 'customer.orders.fulfillment_status' | t }}
-                  </th>
-                  <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
-                </tr>
-              </thead>
-              <tbody role="rowgroup">
-                {%- for order in customer.orders -%}
+        <div class="h--details-content">
+          {% paginate customer.orders by 20 %}
+            {%- if customer.orders.size > 0 -%}
+              <table role="table" class="order-history">
+                <caption class="visually-hidden">
+                  {{ 'customer.orders.title' | t }}
+                </caption>
+                <thead role="rowgroup">
                   <tr role="row">
-                    <td
-                      id="RowOrder"
-                      role="cell"
-                      headers="ColumnOrder"
-                      data-label="{{ 'customer.orders.order_number' | t }}"
-                    >
-                      <a
-                        href="{{ order.customer_url }}"
-                        aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
-                      >
-                        {{ order.name }}
-                      </a>
-                    </td>
-                    <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
-                      {{ order.created_at | time_tag: format: 'date' }}
-                    </td>
-                    <td
-                      headers="RowOrder ColumnPayment"
-                      role="cell"
-                      data-label="{{ 'customer.orders.payment_status' | t }}"
-                    >
-                      {{ order.financial_status_label }}
-                    </td>
-                    <td
-                      headers="RowOrder ColumnFulfillment"
-                      role="cell"
-                      data-label="{{ 'customer.orders.fulfillment_status' | t }}"
-                    >
-                      {{ order.fulfillment_status_label }}
-                    </td>
-                    <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-                      {{ order.total_net_amount | money_with_currency }}
-                    </td>
+                    <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+                    <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+                    <th id="ColumnPayment" scope="col" role="columnheader">
+                      {{ 'customer.orders.payment_status' | t }}
+                    </th>
+                    <th id="ColumnFulfillment" scope="col" role="columnheader">
+                      {{ 'customer.orders.fulfillment_status' | t }}
+                    </th>
+                    <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
                   </tr>
-                {%- endfor -%}
-              </tbody>
-            </table>
-          {%- else -%}
-            <p>{{ 'customer.orders.none' | t }}</p>
-          {%- endif -%}
-
-          {%- if paginate.pages > 1 -%}
-            {%- if paginate.parts.size > 0 -%}
-              <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-                <ul role="list">
-                  {%- if paginate.previous -%}
-                    <li>
-                      <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
-                        </svg>
-                      </a>
-                    </li>
-                  {%- endif -%}
-
-                  {%- for part in paginate.parts -%}
-                    <li>
-                      {%- if part.is_link -%}
-                        <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                          {{- part.title -}}
+                </thead>
+                <tbody role="rowgroup">
+                  {%- for order in customer.orders -%}
+                    <tr role="row">
+                      <td
+                        id="RowOrder"
+                        role="cell"
+                        headers="ColumnOrder"
+                        data-label="{{ 'customer.orders.order_number' | t }}"
+                      >
+                        <a
+                          href="{{ order.customer_url }}"
+                          aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                        >
+                          {{ order.name }}
                         </a>
-                      {%- else -%}
-                        {%- if part.title == paginate.current_page -%}
-                          <span
-                            aria-current="page"
-                            aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
-                          >
-                            {{- part.title -}}
-                          </span>
-                        {%- else -%}
-                          <span>{{ part.title }}</span>
-                        {%- endif -%}
-                      {%- endif -%}
-                    </li>
+                      </td>
+                      <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                        {{ order.created_at | time_tag: format: 'date' }}
+                      </td>
+                      <td
+                        headers="RowOrder ColumnPayment"
+                        role="cell"
+                        data-label="{{ 'customer.orders.payment_status' | t }}"
+                      >
+                        {{ order.financial_status_label }}
+                      </td>
+                      <td
+                        headers="RowOrder ColumnFulfillment"
+                        role="cell"
+                        data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+                      >
+                        {{ order.fulfillment_status_label }}
+                      </td>
+                      <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                        {{ order.total_net_amount | money_with_currency }}
+                      </td>
+                    </tr>
                   {%- endfor -%}
-
-                  {%- if paginate.next -%}
-                    <li>
-                      <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
-                        </svg>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                </ul>
-              </nav>
+                </tbody>
+              </table>
+            {%- else -%}
+              <div>{{ 'customer.orders.none' | t }}</div>
             {%- endif -%}
-          {%- endif -%}
-        {% endpaginate %}
+
+            {%- if paginate.pages > 1 -%}
+              {%- if paginate.parts.size > 0 -%}
+                <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                  <ul role="list">
+                    {%- if paginate.previous -%}
+                      <li>
+                        <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                          </svg>
+                        </a>
+                      </li>
+                    {%- endif -%}
+
+                    {%- for part in paginate.parts -%}
+                      <li>
+                        {%- if part.is_link -%}
+                          <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                            {{- part.title -}}
+                          </a>
+                        {%- else -%}
+                          {%- if part.title == paginate.current_page -%}
+                            <span
+                              aria-current="page"
+                              aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                            >
+                              {{- part.title -}}
+                            </span>
+                          {%- else -%}
+                            <span>{{ part.title }}</span>
+                          {%- endif -%}
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+
+                    {%- if paginate.next -%}
+                      <li>
+                        <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                          </svg>
+                        </a>
+                      </li>
+                    {%- endif -%}
+                  </ul>
+                </nav>
+              {%- endif -%}
+            {%- endif -%}
+          {% endpaginate %}
+        </div>
       </details>
     </li>
     <li>
       <details>
         <summary>ADRESS BOOK</summary>
 
-        {{ customer.default_address | format_address }}
+        <div class="h--details-content">
+          {{ customer.default_address | format_address }}
 
-        <a target="_blank" href="{{ routes.account_addresses_url }}">
-          {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
-        </a>
+          <a target="_blank" href="{{ routes.account_addresses_url }}">
+            {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+          </a>
+        </div>
       </details>
     </li>
     {% comment %}
@@ -194,7 +210,7 @@
       <details>
         <summary>CONTACT US</summary>
 
-        <div>
+        <div class="h--details-content">
           <p>
             If you have any queries please do not hesitate to contact us in whichever way works best for you. We're here
             to help and answer any questions you may have. We have an FAQs section and the answer might be there
