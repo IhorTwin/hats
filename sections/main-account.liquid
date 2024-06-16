@@ -15,9 +15,9 @@
 {%- endstyle -%}
 
 <style>
-  .customer {
-    --tab-width: 365px;
-    --tab-gap: 217px;
+  :root {
+    --h-tab-width: 365px;
+    --h-tab-gap: 217px;
   }
 
   .h--customer__title {
@@ -35,12 +35,12 @@
   .h--customer-tabs li details {
     font-size: 16px;
     text-transform: none;
-    gap: var(--tab-gap);
+    gap: var(--h-tab-gap);
   }
 
   .h--customer-tabs li a,
   .h--customer-tabs li summary {
-    width: var(--tab-width);
+    width: var(--h-tab-width);
     text-align: center;
     padding-block: 32px;
     text-transform: uppercase;
@@ -54,7 +54,7 @@
   }
 
   .h--customer-tabs li {
-    width: 365px;
+    width: var(--h-tab-width);
   }
   .h--customer-tabs li:not(:last-child) {
     border-bottom: 1px solid black;
@@ -66,7 +66,7 @@
     max-width: 800px;
     height: 100%;
     top: 0;
-    left: calc(var(--tab-width) + var(--tab-gap););
+    left: calc(var(--h-tab-width) + var(--h-tab-gap););
     padding-block: 1rem;
     display: flex;
     align-items: center;
