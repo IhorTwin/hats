@@ -2386,9 +2386,9 @@ product-info .loading__spinner:not(.hidden) ~ *,
     /* grid-template-areas: 'navigation heading icons'; */
     /* grid-template-columns: 1fr auto 1fr; */
     /* column-gap: 2rem; */
-
-    grid-template-areas: 'navigation icons';
-    grid-template-columns: 1fr min-content;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
   }
 
   .header--middle-center .header__inline-menu {
