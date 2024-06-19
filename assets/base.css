@@ -3541,3 +3541,10 @@ details-disclosure > details {
     margin-inline: auto;
   }
 }
+
+a.button.button--secondary {
+  padding-inline: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-width: 100px;
+}
