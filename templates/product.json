@@ -58,8 +58,14 @@
           "settings": {
           }
         },
+        "description_Ny8Hgy": {
+          "type": "description",
+          "settings": {
+          }
+        },
         "collapsible_tab_pwxUbc": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "product Details",
             "icon": "none",
@@ -117,6 +123,7 @@
         "text_FeekLg",
         "variant_picker",
         "quantity_selector",
+        "description_Ny8Hgy",
         "collapsible_tab_pwxUbc",
         "collapsible-row-0",
         "collapsible-row-1",
