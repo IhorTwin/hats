@@ -20,13 +20,6 @@
     "video_banner_section_p3qHth": {
       "type": "video-banner-section",
       "blocks": {
-        "video_banner_section_wQVbaD": {
-          "type": "video-banner-section",
-          "settings": {
-            "title": "Title for video banner",
-            "subtitle": "Describe braand"
-          }
-        },
         "video_banner_section_tiGkkL": {
           "type": "video-banner-section",
           "settings": {
@@ -38,7 +31,6 @@
         }
       },
       "block_order": [
-        "video_banner_section_wQVbaD",
         "video_banner_section_tiGkkL"
       ],
       "settings": {
