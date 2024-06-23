@@ -37,7 +37,7 @@
   <div class="h--video-banner-section__video">
     <video
       autoplay
-      src="{{ section.settings.video }}"
+      src="{{ section.settings.vb_video.preview_image }}"
       width="960"
       height="auto"
       poster="{{ "cover-main-banner.png" | asset_url }}"
@@ -47,15 +47,11 @@
   {% comment %} --- {% endcomment %}
 
   <div class="h--video-banner-section__content">
-    <deferred-media
-        class="h--video-banner-section__content-image"
-    >
-        {{
-            section.settings.image
-            | image_url: width: 200
-            | image_tag: widths: '92', alt: ""
-          }}
-    </deferred-media>
+    
+    {{
+        section.settings.vb_image.src
+    }}
+
 
     {%- if section.settings.title != blank -%}
       <h1 class="h2 inline-richtext center">
@@ -80,12 +76,12 @@
   "settings": [
     {
       "type": "video",
-      "id": "video",
+      "id": "vb_video",
       "label": "Banner video"
     },
     {
       "type": "image_picker",
-      "id": "image",
+      "id": "vb_image",
       "label": "Image URL"
     },
     {
@@ -106,12 +102,12 @@
       "settings": [
         {
           "type": "video",
-          "id": "video",
+          "id": "vb_video",
           "label": "Banner video"
         },
         {
           "type": "image_picker",
-          "id": "image",
+          "id": "vb_image",
           "label": "Banner image"
         },
         {
