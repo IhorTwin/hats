@@ -1,35 +1,27 @@
-<div class="video-banner template-{{ template.name }}">
-  <div style="background: tomato; height: 100vh;"></div>
-  <div class="modal-video__content-info">
-    <deferred-media class="modal-video__video template-popup">
-      <template>
-        {%- if block.settings.video_url.type == 'youtube' -%}
-          <iframe
-            src="https://www.youtube.com/embed/{{ block.settings.video_url.id }}?enablejsapi=1"
-            class="js-youtube"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            title="{{ block.settings.description | escape }}"
-          ></iframe>
-        {%- else -%}
-          <iframe
-            src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}"
-            class="js-vimeo"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            title="{{ block.settings.description | escape }}"
-          ></iframe>
-        {%- endif -%}
-      </template>
-    </deferred-media>
+<style>
+  .video-banner-section {
+  }
+</style>
+
+<div class="h--video-banner-section template-{{ template.name }}">
+  <div class="h--video-banner-section__video">
+    {%- if section.settings.video != blank -%}
+      <video
+        autoplay
+        src="{{ section.settings.video }}"
+        width="960"
+        height="auto"
+      />
+    {%- endif -%}
   </div>
 
-  <div class="h--video-banner-content">
+  {% comment %} --- {% endcomment %}
+
+  <div class="h--video-banner-section__content">
     {%- if section.settings.image != blank -%}
       <img
         class="h--video-banner-image"
-        srcset="{{ section.settings.image | image_url: width: section.settings.image_width }}, {{ section.settings.image | image_url: width: image_size_2x }} 2x"
-        src="{{ section.settings.image | image_url: width: 760 }}"
+        src="{{ section.settings.image | image_url }}"
         alt="{{ section.settings.image.alt | escape }}"
         loading="lazy"
         width="{{ section.settings.image.width }}"
@@ -59,25 +51,25 @@
   },
   "settings": [
     {
-        "type": "text",
-        "id": "video_url",
-        "label": "Video URL"
-      },
-    {
-        "type": "image_picker",
-        "id": "image_url",
-        "label": "Video URL"
-      },
-    {
-        "type": "text",
-        "id": "title",
-        "label": "Video banner title"
-      },
-    {
-        "type": "text",
-        "id": "subtitle",
-        "label": "Video banner subtitle"
+      "type": "text",
+      "id": "video",
+      "label": "Video URL"
     },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Video URL"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Video banner title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Video banner subtitle"
+    }
   ],
   "blocks": [
     {
@@ -86,7 +78,7 @@
       "settings": [
         {
           "type": "video_url",
-          "id": "video_url",
+          "id": "video",
           "accept": ["youtube", "vimeo"],
           "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
           "label": "Background video url",
@@ -95,7 +87,7 @@
         },
         {
           "type": "image_picker",
-          "id": "image_url",
+          "id": "image",
           "label": "logo-banner-label"
         },
         {
@@ -123,8 +115,8 @@
       },
       "blocks": [
         {
-            "type": "video-banner-section",
-        },
+          "type": "video-banner-section"
+        }
       ]
     }
   ]
