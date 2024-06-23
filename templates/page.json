@@ -23,7 +23,7 @@
         "video_banner_section_wQVbaD": {
           "type": "video-banner-section",
           "settings": {
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "shopify:\/\/files\/videos\/-08be-417c-b30c-6f2566f19947 (2).mp4",
             "image": "shopify:\/\/shop_images\/Logo.png",
             "title": "Title for video banner",
             "subtitle": "Describe braand"
@@ -34,7 +34,6 @@
         "video_banner_section_wQVbaD"
       ],
       "settings": {
-        "video": "",
         "title": "your unique accessory",
         "subtitle": "Single piece creation designed with the master’s warm touch"
       }
