@@ -23,15 +23,23 @@
         "video_banner_section_wQVbaD": {
           "type": "video-banner-section",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/-08be-417c-b30c-6f2566f19947 (2).mp4",
-            "image": "shopify:\/\/shop_images\/Logo.png",
+            "title": "Title for video banner",
+            "subtitle": "Describe braand"
+          }
+        },
+        "video_banner_section_tiGkkL": {
+          "type": "video-banner-section",
+          "settings": {
+            "vb_video": "shopify:\/\/files\/videos\/-08be-417c-b30c-6f2566f19947 (2).mp4",
+            "vb_image": "shopify:\/\/shop_images\/Logo.png",
             "title": "Title for video banner",
             "subtitle": "Describe braand"
           }
         }
       },
       "block_order": [
-        "video_banner_section_wQVbaD"
+        "video_banner_section_wQVbaD",
+        "video_banner_section_tiGkkL"
       ],
       "settings": {
         "title": "your unique accessory",
