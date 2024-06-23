@@ -1,64 +1,64 @@
 <style>
-    .h--video-banner-section {
-      position: relative;
-      min-height: calc(100vh - 84px);
-      display: flex;
-    }
+  .h--video-banner-section {
+    position: relative;
+    min-height: calc(100vh - 84px);
+    display: flex;
+  }
 
-    .h--video-banner-section__video {
-      position: absolute
-      z-index: 1;
-      inset: 0;
-      display: flex;
-    }
+  .h--video-banner-section__video {
+    position: absolute
+    z-index: 1;
+    inset: 0;
+    display: flex;
+  }
 
-    .h--video-banner-section__video video {
-      width: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
+  .h--video-banner-section__video video {
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
 
-    .h--video-banner-section__content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      margin: auto;
-      color: white;
-    }
+  .h--video-banner-section__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin: auto;
+    color: white;
+  }
 
-    .h--video-banner-section__content .h2 {
-      color: inherit;
-    }
+  .h--video-banner-section__content .h2 {
+    color: inherit;
+  }
 
 
-    @media (min-width: 960px) {
-        .h--video-banner-section__title {
-            font-size: 50px;
-        }
-        
-        .h--video-banner-section__subtitle {
-            max-width: 34ch;
-        }
-    }
+  @media (min-width: 960px) {
+      .h--video-banner-section__title {
+          font-size: 50px;
+      }
+
+      .h--video-banner-section__subtitle {
+          max-width: 34ch;
+      }
+  }
 </style>
 
 <div class="h--video-banner-section template-{{ template.name }}">
   <div class="h--video-banner-section__video">
-    <video
-      autoplay
-      src="{{ section.settings.vb_video }}"
-      width="960"
-      height="auto"
-      poster="{{ "cover-main-banner.png" | asset_url }}"
-    ></video>
+    {{
+      section.settings.vb_video
+      | video_tag:
+        image_size: '1100x',
+        autoplay: true,
+        loop: section.settings.enable_video_looping,
+        controls: true,
+        muted: false
+    }}
   </div>
 
-  {% comment %} --- {% endcomment %}
-
   <div class="h--video-banner-section__content center">
-    <img width="93" height="auto" src="{{ section.settings.vb_image | image_url }}" alt="" />
+    <img width="93" height="auto" src="{{ section.settings.vb_image | image_url }}" alt="">
 
     {%- if section.settings.title != blank -%}
       <h1 class="h2 inline-richtext h--video-banner-section__title">
