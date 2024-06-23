@@ -1,5 +1,5 @@
 <style>
-  .h--video-banner-section  {
+  .h--video-banner-section {
     position: relative;
     min-height: calc(100vh - 84px);
     display: flex;
@@ -10,30 +10,28 @@
     z-index: 1;
     inset: 0;
     display: flex;
-    }
+  }
 
-    .h--video-banner-section__video video {
-        width:100%;
-        object-fit: cover;
-    }
+  .h--video-banner-section__video video {
+    width: 100%;
+    object-fit: cover;
+  }
 
-    .h--video-banner-section__content {
-        position: relative;
-        z-index: 2;
-        margin: auto;
-    }
+  .h--video-banner-section__content {
+    position: relative;
+    z-index: 2;
+    margin: auto;
+  }
 </style>
 
 <div class="h--video-banner-section template-{{ template.name }}">
   <div class="h--video-banner-section__video">
-    {%- if section.settings.video != blank -%}
-      <video
-        autoplay
-        src="{{ section.settings.video }}"
-        width="960"
-        height="auto"
-      />
-    {%- endif -%}
+    <video
+      autoplay
+      src="{{ section.settings.video }}"
+      width="960"
+      height="auto"
+    />
   </div>
 
   {% comment %} --- {% endcomment %}
@@ -43,15 +41,15 @@
       <img
         class="h--video-banner-image"
         src="{{ section.settings.image | image_url }}"
-        alt="{{ section.settings.image.alt | escape }}"
         loading="lazy"
-        width="{{ section.settings.image.width }}"
-        height="{{ section.settings.image.height }}"
+        width="92"
+        height="auto"
+        alt=""
       >
     {%- endif -%}
 
     {%- if section.settings.title != blank -%}
-      <h2 class="h2 inline-richtext">
+      <h2 class="h2 inline-richtext center">
         {{ section.settings.title }}
       </h2>
     {%- endif -%}
@@ -72,9 +70,9 @@
   },
   "settings": [
     {
-      "type": "text",
+      "type": "video",
       "id": "video",
-      "label": "Video URL"
+      "label": "Banner video"
     },
     {
       "type": "image_picker",
@@ -98,32 +96,28 @@
       "name": "Logo for banner",
       "settings": [
         {
-          "type": "video_url",
+          "type": "video",
           "id": "video",
-          "accept": ["youtube", "vimeo"],
-          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-          "label": "Background video url",
-          "placeholder": "Bg video",
-          "info": "info"
+          "label": "Banner video"
         },
         {
           "type": "image_picker",
           "id": "image",
-          "label": "logo-banner-label"
+          "label": "Banner image"
         },
         {
           "type": "text",
           "id": "title",
           "default": "Title for video banner",
-          "label": "t:sections.collage.blocks.video.settings.description.label",
-          "info": "t:sections.collage.blocks.video.settings.description.info"
+          "label": "Title for video banner",
+          "info": "Title for video banner"
         },
         {
           "type": "text",
           "id": "subtitle",
           "default": "Describe braand",
-          "label": "t:sections.collage.blocks.video.settings.description.label",
-          "info": "t:sections.collage.blocks.video.settings.description.info"
+          "label": "subtitle",
+          "info": "subtitle"
         }
       ]
     }
