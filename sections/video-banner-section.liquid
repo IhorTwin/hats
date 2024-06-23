@@ -30,14 +30,25 @@
 
     .h--video-banner-section__content .h2 {
       color: inherit;
-  }
+    }
+
+
+    @media (min-width: 960px) {
+        .h--video-banner-section__title {
+            font-size: 50px;
+        }
+        
+        .h--video-banner-section__subtitle {
+            max-width: 34ch;
+        }
+    }
 </style>
 
 <div class="h--video-banner-section template-{{ template.name }}">
   <div class="h--video-banner-section__video">
     <video
       autoplay
-      src="{{ section.settings.vb_video.preview_image }}"
+      src="{{ section.settings.vb_video }}"
       width="960"
       height="auto"
       poster="{{ "cover-main-banner.png" | asset_url }}"
@@ -46,20 +57,16 @@
 
   {% comment %} --- {% endcomment %}
 
-  <div class="h--video-banner-section__content">
-    
-    {{
-        section.settings.vb_image.src
-    }}
-
+  <div class="h--video-banner-section__content center">
+    <img width="93" height="auto" src="{{ section.settings.vb_image | image_url }}" alt="" />
 
     {%- if section.settings.title != blank -%}
-      <h1 class="h2 inline-richtext center">
+      <h1 class="h2 inline-richtext h--video-banner-section__title">
         {{ section.settings.title }}
       </h1>
     {%- endif -%}
     {%- if section.settings.subtitle != blank -%}
-      <p class="inline-richtext">
+      <p class="inline-richtext h--video-banner-section__subtitle">
         {{ section.settings.subtitle }}
       </p>
     {%- endif -%}
