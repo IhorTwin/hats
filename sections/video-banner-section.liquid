@@ -57,6 +57,28 @@
   "disabled_on": {
     "groups": ["header", "footer"]
   },
+  "settings": [
+    {
+        "type": "text",
+        "id": "video_url",
+        "label": "Video URL"
+      },
+    {
+        "type": "image_picker",
+        "id": "image_url",
+        "label": "Video URL"
+      },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Video banner title"
+      },
+    {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Video banner subtitle"
+    },
+  ],
   "blocks": [
     {
       "type": "video-banner-section",
@@ -73,7 +95,7 @@
         },
         {
           "type": "image_picker",
-          "id": "image",
+          "id": "image_url",
           "label": "logo-banner-label"
         },
         {
@@ -95,7 +117,7 @@
   ],
   "presets": [
     {
-      "name": "Video-banner",
+      "name": "Video-banner-section",
       "settings": {
         "title": "Video banner"
       },
