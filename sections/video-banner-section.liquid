@@ -1,26 +1,35 @@
 <style>
-  .h--video-banner-section {
-    position: relative;
-    min-height: calc(100vh - 84px);
-    display: flex;
-  }
+    .h--video-banner-section {
+      position: relative;
+      min-height: calc(100vh - 84px);
+      display: flex;
+    }
 
-  .h--video-banner-section__video {
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    display: flex;
-  }
+    .h--video-banner-section__video {
+      position: absolute
+      z-index: 1;
+      inset: 0;
+      display: flex;
+    }
 
-  .h--video-banner-section__video video {
-    width: 100%;
-    object-fit: cover;
-  }
+    .h--video-banner-section__video video {
+      width: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
 
-  .h--video-banner-section__content {
-    position: relative;
-    z-index: 2;
-    margin: auto;
+    .h--video-banner-section__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      margin: auto;
+      color: white;
+    }
+
+    .h--video-banner-section__content .h2 {
+      color: inherit;
   }
 </style>
 
@@ -31,27 +40,27 @@
       src="{{ section.settings.video }}"
       width="960"
       height="auto"
-    />
+      poster="{{ "cover-main-banner.png" | asset_url }}"
+    ></video>
   </div>
 
   {% comment %} --- {% endcomment %}
 
   <div class="h--video-banner-section__content">
-    {%- if section.settings.image != blank -%}
-      <img
-        class="h--video-banner-image"
-        src="{{ section.settings.image | image_url }}"
-        loading="lazy"
-        width="92"
-        height="auto"
-        alt=""
-      >
-    {%- endif -%}
+    <deferred-media
+        class="h--video-banner-section__content-image"
+    >
+        {{
+            section.settings.image
+            | image_url: width: 200
+            | image_tag: widths: '92', alt: ""
+          }}
+    </deferred-media>
 
     {%- if section.settings.title != blank -%}
-      <h2 class="h2 inline-richtext center">
+      <h1 class="h2 inline-richtext center">
         {{ section.settings.title }}
-      </h2>
+      </h1>
     {%- endif -%}
     {%- if section.settings.subtitle != blank -%}
       <p class="inline-richtext">
@@ -77,7 +86,7 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Video URL"
+      "label": "Image URL"
     },
     {
       "type": "text",
