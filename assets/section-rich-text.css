@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.center .rte {
+  margin-inline: auto;
+}
+
 @media screen and (min-width: 750px) {
   .rich-text__wrapper {
     width: 100%;

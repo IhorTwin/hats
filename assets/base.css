@@ -354,7 +354,6 @@ p, .rte, .rte p {
   color: var(--color-foreground);
   line-height: 1.2;
   max-width: 50ch;
-  margin-inline: auto;
 }
 
 p + p {
@@ -3534,11 +3533,6 @@ details-disclosure > details {
 
   .image-with-text__media--small {
     height: 42rem;
-  }
-
-  h2.image-with-text__heading {
-    width: 500px;
-    margin-inline: auto;
   }
 }
 

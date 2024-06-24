@@ -121,7 +121,7 @@
     }
 
     .h--is-inverted.header a,
-    .h--is-inverted.header a.active {
+    .h--is-inverted.header .header__active-menu-item {
       color: rgb(var(--color-background)) !important;
       fill: rgb(var(--color-background)) !important;
     }
@@ -183,6 +183,7 @@
     endif
   endfor
 -%}
+
 
 <{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if template.name == "index" or page.title == "ABOUT US"  %} h--is-inverted-wrapper--is-sticky {% endif %}">
   {%- liquid
