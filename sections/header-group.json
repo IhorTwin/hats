@@ -44,6 +44,7 @@
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "none",
         "show_line_separator": true,
+        "is_inverted": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
