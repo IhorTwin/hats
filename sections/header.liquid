@@ -107,12 +107,12 @@
       gap: var(--header-menu-gap);
     }
 
-    .h--main-page-header-wrapper--is-sticky {
+    .h--is-inverted-wrapper--is-sticky {
       border: none !important;
       background: transparent;
     }
 
-    .h--main-page-header {
+    .h--is-inverted {
       position: relative;
       background: transparent;
       color: rgb(var(--color-background)) !important;
@@ -120,7 +120,7 @@
       margin-bottom: calc(var(--header-height) * -1);
     }
 
-    .h--main-page-header.header a {
+    .h--is-inverted.header a {
       color: rgb(var(--color-background)) !important;
       fill: rgb(var(--color-background)) !important;
     }
@@ -183,7 +183,7 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if template.name == 'index' %} h--main-page-header-wrapper--is-sticky {% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if section.settings.is_inverted %} h--is-inverted-wrapper--is-sticky {% endif %}">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -196,7 +196,7 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="{% if template.name == 'index' %} h--main-page-header {% endif %} header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="{% if section.settings.is_inverted %} h--is-inverted {% endif %} header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
@@ -247,6 +247,7 @@
       endif
     %}
 
+    <h1>{{ template.name }}</h1>
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
@@ -604,6 +605,12 @@
       "id": "show_line_separator",
       "default": true,
       "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_inverted",
+      "default": false,
+      "label": "Is inverted"
     },
     {
       "type": "header",
