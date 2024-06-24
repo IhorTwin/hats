@@ -9,6 +9,26 @@
 */
 {
   "sections": {
+    "video_banner_section_neHHQQ": {
+      "type": "video-banner-section",
+      "blocks": {
+        "video_banner_section_g3JyW4": {
+          "type": "video-banner-section",
+          "settings": {
+            "title": "Title for video banner",
+            "subtitle": "Describe braand"
+          }
+        }
+      },
+      "block_order": [
+        "video_banner_section_g3JyW4"
+      ],
+      "settings": {
+        "vb_video": "shopify:\/\/files\/videos\/-e5ea-44ea-bd1c-cf0593235ba4 (1).mp4",
+        "title": "",
+        "subtitle": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -25,54 +45,6 @@
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "image_banner_dkDB7n": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_fTVQt4": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_Qc6GpU": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "buttons_ty8cpn": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_fTVQt4",
-        "text_Qc6GpU",
-        "buttons_ty8cpn"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/manufacturing.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
       }
     },
     "image_with_text_BVcEep": {
@@ -194,9 +166,9 @@
     }
   },
   "order": [
+    "video_banner_section_neHHQQ",
     "main",
     "custom_liquid_CfDynN",
-    "image_banner_dkDB7n",
     "image_with_text_BVcEep",
     "rich_text_eCk6WY",
     "featured_collection_gDakc9"
