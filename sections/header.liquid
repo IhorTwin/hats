@@ -120,7 +120,8 @@
       margin-bottom: calc(var(--header-height) * -1);
     }
 
-    .h--is-inverted.header a {
+    .h--is-inverted.header a,
+    .h--is-inverted.header a.active {
       color: rgb(var(--color-background)) !important;
       fill: rgb(var(--color-background)) !important;
     }
@@ -183,7 +184,7 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if section.settings.is_inverted %} h--is-inverted-wrapper--is-sticky {% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if template.name == "index" or page.title == "ABOUT US"  %} h--is-inverted-wrapper--is-sticky {% endif %}">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -196,7 +197,9 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="{% if section.settings.is_inverted %} h--is-inverted {% endif %} header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+
+  {% comment %} rewrite to assign  {% endcomment %}
+  <header class="{% if template.name == "index" or page.title == "ABOUT US" %} h--is-inverted {% endif %} header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
@@ -247,13 +250,12 @@
       endif
     %}
 
-    <h1>{{ template.name }}</h1>
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {% if template.name == 'index'  %}
+            {% if template.name == "index" or page.title == "ABOUT US" %}
               <div class="header__heading-logo-wrapper">
                 <img width="250" height="auto" src="{{ 'logo-white.png' | asset_url }}" alt="" />              
               </div>
