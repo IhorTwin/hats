@@ -46,10 +46,7 @@
 
 <div class="h--video-banner-section template-{{ template.name }}">
   <div class="h--video-banner-section__video">
-    {{
-      section.settings.vb_video
-      | video_tag: image_size: '100%', cover_image: 'cover-main-banner.png' | asset_url, autoplay: true, loop: true, controls: false, muted: true
-    }}
+    {{ section.settings.vb_video | video_tag: image_size: '100vw', autoplay: true, loop: true, controls: false, muted: true }}
   </div>
 
   <div class="h--video-banner-section__content center">
