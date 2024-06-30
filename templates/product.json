@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "LEATHER HAT",
-            "text_style": "body"
-          }
-        },
         "caption": {
           "type": "text",
           "settings": {
@@ -26,16 +19,14 @@
             "text_style": "subtitle"
           }
         },
-        "price": {
-          "type": "price",
+        "title_zKVRJT": {
+          "type": "title",
           "settings": {
           }
         },
-        "text_CPWiCF": {
-          "type": "text",
+        "price": {
+          "type": "price",
           "settings": {
-            "text": "New collection 2024",
-            "text_style": "body"
           }
         },
         "text_FeekLg": {
@@ -116,10 +107,9 @@
         }
       },
       "block_order": [
-        "vendor",
         "caption",
+        "title_zKVRJT",
         "price",
-        "text_CPWiCF",
         "text_FeekLg",
         "variant_picker",
         "quantity_selector",
