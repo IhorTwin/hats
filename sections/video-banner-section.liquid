@@ -3,13 +3,30 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
+    background: url({{ 'video-cover.png' | asset_url }});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (min-width: 990px) {
+    .h--video-banner-section {
+      background: none;
+    }
   }
 
   .h--video-banner-section__video {
     position: absolute;
     z-index: 1;
     inset: 0;
-    display: flex;
+
+    display: none;
+  }
+
+  @media (min-width: 990px) {
+    .h--video-banner-section__video {
+      display: flex;
+    }
   }
 
   .h--video-banner-section__video video {
@@ -42,6 +59,10 @@
     max-width: 34ch;
     margin-inline: auto;
   }
+
+  .h--video-banner-section__video--hidden {
+    opacity: .2;
+  }
 </style>
 
 <div class="h--video-banner-section template-{{ template.name }}">
@@ -64,6 +85,31 @@
     {%- endif -%}
   </div>
 </div>
+
+{% comment %} <script>
+  console.log("I AM A SCRIPT");
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("I AM A SCRIPT in DOMContentLoaded");
+
+    const video = document.querySelector('.h--video-banner-section__video > video');
+    const videoContainer = document.querySelector('.h--video-banner-section__video');
+
+    console.log("I AM A", video);
+    console.log("I AM A", videoContainer);
+
+    if (video) {
+      console.log("I AM in - if video");
+      video.addEventListener('canplay', function() {
+        console.log('VIDEO canplaythrough 📽');
+
+        video.play();
+        videoContainer.classList.remove('h--video-banner-section__video--hidden');
+      });
+    }
+
+  });
+</script> {% endcomment %}
+
 {% schema %}
 {
   "name": "Video-banner-section",

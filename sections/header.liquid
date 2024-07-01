@@ -77,6 +77,35 @@
     }
   }
 
+  .header {
+    --header-menu-gap: 2rem;
+    --header-height: 75px;
+  }
+
+  .h--header__icon--account {
+    margin-right: var(--header-menu-gap);
+  }
+
+  .h--is-inverted-wrapper {
+    border: none !important;
+    background: transparent;
+  }
+
+  .h--is-inverted {
+    position: relative;
+    background: transparent;
+    color: rgb(var(--color-background)) !important;
+    border-bottom: 1px solid currentColor;
+    margin-bottom: calc(var(--header-height) * -1);
+  }
+
+  .h--is-inverted.header a,
+  .h--is-inverted.header .header__active-menu-item,
+  .h--is-inverted.header .icon {
+    color: rgb(var(--color-background)) !important;
+    fill: rgb(var(--color-background)) !important;
+  }
+
   @media (min-width: 990px) {
     .header {
       --header-menu-gap: 9rem;
@@ -106,25 +135,6 @@
       flex-wrap: nowrap;
       gap: var(--header-menu-gap);
     }
-
-    .h--is-inverted-wrapper--is-sticky {
-      border: none !important;
-      background: transparent;
-    }
-
-    .h--is-inverted {
-      position: relative;
-      background: transparent;
-      color: rgb(var(--color-background)) !important;
-      border-bottom: 1px solid currentColor;
-      margin-bottom: calc(var(--header-height) * -1);
-    }
-
-    .h--is-inverted.header a,
-    .h--is-inverted.header .header__active-menu-item {
-      color: rgb(var(--color-background)) !important;
-      fill: rgb(var(--color-background)) !important;
-    }
   }
 </style>
 
@@ -148,6 +158,22 @@
     .header {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+
+  .h--cart-label {
+    margin-right: 0.5rem; 
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .h--header__heading-logo-wrapper {
+      max-width: min(183px, 60vw);
+    }
+
+    .h--cart-label {
+      display: none !important;
     }
   }
 {%- endstyle -%}
@@ -185,7 +211,7 @@
 -%}
 
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if template.name == "index" or page.title == "ABOUT US"  %} h--is-inverted-wrapper--is-sticky {% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %} {% if template.name == "index" or page.title == "ABOUT US"  %} h--is-inverted-wrapper {% endif %}">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -217,7 +243,7 @@
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
             {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
+              <div class="header__heading-logo-wrapper h--header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
                 {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
@@ -343,7 +369,7 @@
       {%- endfor -%}
 
       <a href="{{ routes.cart_url }}" class="h--header__icon--cart header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-        <span style="margin-right: 0.5rem; vertical-align: middle;">CART</span>
+        <span class="h--cart-label">CART</span>
         {%- liquid
           if cart == empty
             render 'icon-cart-empty'
