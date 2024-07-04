@@ -4,6 +4,51 @@
   Usage:
   {% render 'header-drawer' %}
 {% endcomment %}
+<style>
+  .h--is-inverted .menu-drawer { 
+    background-color: transparent; 
+  }
+
+  .menu-drawer__navigation {
+    padding-bottom: 0;
+    position: relative;
+  }
+
+  .menu-drawer__navigation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: rgb(var(--color-background));
+  }
+
+  .menu-drawer__navigation-container {
+    grid-template-rows: auto 1fr;
+  }
+
+  .list-menu__item {
+    justify-content: center;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 1.4rem;
+  }
+
+  .menu-drawer__menu li + li .list-menu__item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: rgb(var(--color-background));
+  }
+
+  .header:not(.h--is-inverted) .menu-drawer__menu li + li .list-menu__item::after {
+    background: rgb(var(--color-foreground));
+  }
+</style>
 
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
@@ -123,17 +168,15 @@
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="menu-drawer__utility-links">
+          <div>
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
+                class="menu-drawer__menu-item list-menu__item link link--text focus-inset medium-hide large-up-hide"
               >
                 <account-icon>
                   {%- if customer and customer.has_avatar? -%}
                     {{ customer | avatar }}
-                  {%- else -%}
-                    {% render 'icon-account' %}
                   {%- endif -%}
                 </account-icon>
                 {%- liquid
