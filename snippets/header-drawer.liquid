@@ -188,7 +188,10 @@
                 -%}
               </a>
             {%- endif -%}
-            {%- if localization.available_countries or localization.available_languages -%}
+            {% comment %}
+              NOTE: disabled in admin pannel but does not appies here. So we comment this code.           
+              
+              {%- if localization.available_countries or localization.available_languages -%}
               <div class="menu-drawer__localization header-localization">
                 {%- if localization.available_countries and localization.available_countries.size > 1 -%}
                   <localization-form>
@@ -216,7 +219,7 @@
                   </localization-form>
                 {%- endif -%}
               </div>
-            {%- endif -%}
+            {%- endif -%} {% endcomment %}
             <ul class="list list-social list-unstyled" role="list">
               {%- if settings.social_twitter_link != blank -%}
                 <li class="list-social__item">
