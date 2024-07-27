@@ -9,7 +9,6 @@
 */
 {
   "sections": {
-    "class": "individual-approach-section",
     "image_with_text_P9zPrA": {
       "type": "image-with-text",
       "blocks": {
@@ -23,7 +22,7 @@
         "text_JGAAnf": {
           "type": "text",
           "settings": {
-            "text": "<p>If your favorite model is not available in the size you need, please indicate its number and the size you need in the message, and our manager will contact you. Once the order is confirmed, it will take 10 days to produce your unique hat and it will be on its way to the customer.<\/p><p>Do you have your own design idea and want to realize it? Describe your wishes to us and our manager will contact you to clarify the details. You can also write us an email or call us.<\/p>",
+            "text": "<p>If your favorite model is not available in the size you need, please indicate its number and the size you need in the message, and our manager will contact you. Once the order is confirmed, it will take 10 days to produce your unique hat and it will be on its way to the customer.<\/p><p>Do you have your own design idea and want to realize it? Describe your wishes to us and our manager will contact you to clarify the details. You can also write us an email or call us.<br\/><br\/>Call us: +<strong>4420793084<\/strong> <br\/><br\/>Write us: <strong>HELLO@GLYGINAHATS.COM<\/strong><\/p>",
             "text_style": "subtitle"
           }
         },
@@ -42,7 +41,7 @@
         "button_c7kF8P"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/hat_00645d28-8ac2-4ffe-aaa7-e07f4c33f3bd.png",
+        "image": "shopify:\/\/shop_images\/Screenshot_2024-07-27_at_16.15.55.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
